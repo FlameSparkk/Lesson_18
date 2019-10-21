@@ -1,0 +1,283 @@
+.categories {
+    padding-top: 4%;
+    padding-bottom: 9%;
+    background-image: url("../images/categories_bg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &__wrapper {
+        padding-left: 15%;
+        padding-right: 15%;
+
+        @media (max-width: 1500px) {
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        @media (max-width: 1200px) {
+            padding: 4%;
+        }
+    }
+
+    &__title {
+        @include font(bold, 28px);
+        margin-bottom: 5%;
+        text-align: center;
+    }
+
+    &__subwrapper {
+        @include flexy(space-between);
+
+        @media (max-width: 425px) {
+            @include flexy(flex-start, center, column);
+        }
+    }
+}
+
+.categorie {
+    @include flexy(center, center, column);
+    position: relative;
+    max-width: 30%;
+
+    @media (max-width: 425px) {
+        max-width: 90%;
+        margin-bottom: 5%;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__image {
+        display: block;
+        max-width: 100%;
+    }
+
+    &__wrapper {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+    &__title {
+        @include font(bold, 16px);
+        color: $attention;
+        margin-bottom: 1.5%;
+    }
+
+    &__description {
+        @include font(300, 15px);
+        color: $white;
+    }
+
+    &__hover {
+        width: 100%;
+        height: 100%;
+        display: none;
+        position: absolute;
+        background-image: url("../images/categories_hover.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+
+        &__button {
+            @include font(bold, 12px);
+            width: 125px;
+            padding-top: 12.5px;
+            padding-bottom: 12.5px;
+            border: 3px solid $white;
+            border-radius: 10px;
+            background-color: transparent;
+            color: $white;
+            text-align: center;
+            cursor: pointer;
+            position: absolute;
+            bottom: 15%;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @media (max-width: 768px) {
+                bottom: 10%;
+                font-size: 10px;
+                width: 90px;
+                padding-top: 7px;
+                padding-bottom: 7px;
+            }
+
+            @media (max-width: 425px) {
+                width: 115px;
+                padding-top: 10.5px;
+                padding-bottom: 10.5px;
+            }
+        }
+    }
+
+    &:hover {
+
+        .categorie__hover {
+            display: block;
+        }        
+    }
+}
+
+.bikes {
+    padding-top: 4%;
+    padding-bottom: 2%;
+    background-color: $white;
+
+    @media (max-width: 425px) {
+        padding-top: 6%;
+        padding-bottom: 5%;
+    }
+
+    &__wrapper {
+        padding-left: 1.5%;
+        padding-right: 1.5%;
+
+        @media (max-width: 425px) {
+            padding: 0;
+        }
+    }
+
+    &__title {
+        @include font(bold, 28px);
+        margin-bottom: 5%;
+        text-align: center;
+
+        @media (max-width: 425px) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__subwrapper {
+        @include flexy(space-between);
+
+        @media (max-width: 425px) {
+            @include flexy(center, center, column);
+        }
+    }
+
+    .bike {
+        @include flexy(flex-start, stretch, column);
+        max-width: 30%;
+
+        @media (max-width: 425px) {
+            max-width: 90%;
+            margin-bottom: 5%;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &__image {
+            display: block;
+            max-width: 100%;
+        }
+
+        &__purchase__wrapper {
+            @include flexy(space-between);
+
+            .buy__wrapper {
+                @include flexy(space-evenly);
+                width: 60%;
+
+                .options__button {
+                    @include font(bold, 12px);
+                    position: relative;
+                    width: 50%;
+                    padding-left: 7%;
+                    border: 2px solid $buttonColor;
+                    border-radius: 10px;
+                    background-color: transparent;
+                    text-align: left;
+                    color: $black;
+                    cursor: pointer;
+
+                    @media (max-width: 1024px) {
+                        padding-left: 4%;
+                    }
+
+                    @media (max-width: 768px) {
+                        font-size: 10px;
+                    }
+
+                    @media (max-width: 667px) and (orientation: landscape) {
+                        font-size: 8px;
+                        padding-left: 4%;
+                        border-radius: 8px;
+                    }
+
+                    &::after {
+                        content: ' ';
+                        display: block;
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: 10%;
+                        background-image: url('../images/down_arrow.png');
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        background-size: cover;
+                        width: 18px;
+                        height: 12px;
+
+                        @media (max-width: 768px) {
+                            width: 12px;
+                            height: 8px;
+                        }
+                    }
+                }
+
+                .buy__button {
+                    @include font(bold, 12px);
+                    width: 30%;
+                    border: none;
+                    border-radius: 10px;
+                    background-color: $buttonColor;
+                    color: $white;
+                    cursor: pointer;
+
+                    &:hover {
+                        color: $attention;
+                        background-color: $black;
+                    }
+
+                    @media (max-width: 667px) and (orientation: landscape) {
+                        font-size: 10px;
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+
+        &__title {
+            @include font(bold, 15px);
+            margin-bottom: 2%;
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
+
+            @media (max-width: 667px) and (orientation: landscape) {
+                font-size: 10px;
+            }
+        }
+
+        &__price {
+            @include font(300, 15px);
+
+            @media (max-width: 768px) {
+                font-size: 12px;
+            }
+
+            @media (max-width: 667px) and (orientation: landscape) {
+                font-size: 10px;
+            }
+        }
+    }
+}
